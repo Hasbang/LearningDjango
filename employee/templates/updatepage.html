@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Page</title>
+</head>
+<body>
+
+    <a href="http://127.0.0.1:8000/employee/">Home</a>
+    
+    <h2>Update Employee Data</h2>
+    <form action="updateData/{{Employee.id}}" method="post">
+        {% csrf_token %}
+
+        name: <input name="name" value="{{Employee.name}}">
+        title: <input name="title" value="{{Employee.title}}">
+
+        <input type="submit" value="update">
+    </form>
+</body>
+</html>
