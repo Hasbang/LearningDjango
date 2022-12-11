@@ -18,7 +18,7 @@ def index(request):
 '''
 def index(request):
     MyEmployees = Employee.objects.all().values()
-    template = loader.get_template('index.html')
+    template = loader.get_template('employee/index.html')
     context={
         'MyEmployees': MyEmployees
     }
@@ -26,7 +26,7 @@ def index(request):
 
 
 def create(request):
-    template = loader.get_template('createpage.html')
+    template = loader.get_template('employee/createpage.html')
     return HttpResponse(template.render( {}, request))
 
 
@@ -46,7 +46,7 @@ def delete(request,id):
 
 def update(request,id):
     updateEmployee =Employee.objects.get(id=id)
-    template = loader.get_template('updatepage.html')
+    template = loader.get_template('employee/updatepage.html')
     context ={
         'Employee': updateEmployee
     }

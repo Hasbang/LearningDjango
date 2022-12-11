@@ -1,0 +1,18 @@
+{% extends 'main.html' %}
+{% block content%}
+
+<body>
+
+    <a href="http://127.0.0.1:8000/employee/">Home</a>
+    
+    <h2>Create Employees</h2>
+    <form action="createData/" method="post">
+        {% csrf_token %}
+
+        name: <input name="name">
+        title: <input name="title">
+
+        <input type="submit" value="create" class='btn btn-primary'>
+    </form>
+</body>
+{% endblock%}
