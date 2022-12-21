@@ -9,7 +9,7 @@
     <form action="updateData/{{Employee.id}}" method="post">
         {% csrf_token %}
 
-        name: <input name="name" value="{{Employee.name}}">
+        Name: <input name="name" value="{{Employee.name}}">
         title: <input name="title" value="{{Employee.title}}">
 
         <input type="submit" value="update">
