@@ -62,3 +62,8 @@ def updateData(request, id):
     updateEmployee.title= title 
     updateEmployee.save()
     return HttpResponseRedirect(reverse('index'))  
+
+
+def blog(request):
+    template = loader.get_template('employee/blog.html')
+    return HttpResponse(template.render(request=request))
