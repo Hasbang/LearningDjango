@@ -11,7 +11,7 @@
                     This is the list of all employees in the company
                 </p>
         </div>
-        <a href="http://127.0.0.1:8000/employee/create/">Create</a>
+        <a href="{% url 'create' %}">Create</a>
     </div>
     </secttion>
 
@@ -31,16 +31,24 @@
                             {% else %}
                             <p class="card-text bg-primary">
                             {% endif %}
+                            
 
                         <div class="d-flex  justify-content-between  align-items-center">
                         <div class="btn-group">
                             
-                                    <a href="update/{{employee.id}}" type="button" class="btn btn-sm btn-outline-secondary">
-                                        Update
+
+                                    <a 
+                                    href="{% url 'delete' employee.id %}" 
+                                    type="button" 
+                                    class="btn btn-sm btn-outline-secondary" />
+                                        Delete
                                     </a>
 
-                                    <a href="delete/{{employee.id}}" type="button"class="btn btn-sm btn-outline-secondary" >
-                                        Delete
+                                    <a 
+                                    href="url 'update' employee.id" 
+                                    type="button"
+                                    class="btn btn-sm btn-outline-secondary"/>
+                                        Update
                                     </a>
                                 
                             </div>
@@ -50,7 +58,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+    
         {% endfor %}
         </div>
     </div>

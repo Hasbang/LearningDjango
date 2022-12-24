@@ -35,13 +35,13 @@ def createData(request):
     data2 = request.POST['title']
     NewEmployee = Employee(name = data1 ,title= data2 ) 
     NewEmployee.save()
-    return HttpResponseRedirect(reverse('index'))   
+    return HttpResponseRedirect(reverse('employee'))   
 
 
 def delete(request,id):
     deleteemployee =Employee.objects.get(id=id)
     deleteemployee.delete()
-    return HttpResponseRedirect(reverse('index'))
+    return HttpResponseRedirect(reverse('employee'))
 
 
 def update(request,id):
@@ -61,7 +61,7 @@ def updateData(request, id):
     updateEmployee.name=name 
     updateEmployee.title= title 
     updateEmployee.save()
-    return HttpResponseRedirect(reverse('index'))  
+    return HttpResponseRedirect(reverse('employee'))  
 
 
 def blog(request):

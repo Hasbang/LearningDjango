@@ -3,7 +3,7 @@
 
 <body>
 
-    <a href="http://127.0.0.1:8000/employee/">Home</a>
+    <a href="{% url 'blog'%}">Home</a>
     
     <h2>Update Employee Data</h2>
     <form action="updateData/{{Employee.id}}" method="post">
